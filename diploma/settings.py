@@ -33,12 +33,13 @@ CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'bashtour.pythonanywhere.com',
+    'travelbash.pythonanywhere.com',
 
 ]
 
 INTERNAL_IPS = [
     '127.0.0.1',
+    
 ]
 
 # Application definition
@@ -92,10 +93,10 @@ WSGI_APPLICATION = 'diploma.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bashtour$default',
-        'USER': 'geekbrains',
+        'NAME': 'travelbash$default',
+        'USER': 'travelbash',
         'PASSWORD': os.getenv('MYSQL_PASSWORD'),
-        'HOST': 'bashtour.mysql.pythonanywhere-services.com',
+        'HOST': 'travelbash.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
