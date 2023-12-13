@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block title %}{{ place.place_name }}{% endblock %}
+
+{% block content %}
+  <h2>{{ place.place_name }}</h2>
+
+  {% if place.image %}
+  <img src="{{ place.image.url }}" width="300" class="card-img-top" alt="Картинка">
+  {% endif %}
+
+  <p>{{ place.description|linebreaks }} </p>
+
+{% endblock %}
+

@@ -1,0 +1,39 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <title>{% block title %}Главная страница{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link type="text/css" href="{% static 'tourist_app/css/common.css' %}" rel="stylesheet">
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="/main/" class="nav-link">Главная страница</a></li>
+    <li><a href="/about/" class="nav-link">О нас</a></li>
+    <li><a href="/places/" class="nav-link">Места</a></li>
+    <li><a href="/routes/" class="nav-link">Маршруты</a></li>
+    <li><a href="/comments/" class="nav-link">Отзывы</a></li>
+    <li><a href="/add_comment/" class="nav-link">Оставить отзыв</a></li>
+<!--    <li><a href="/login/" class="nav-link" >Вход</a></li>-->
+<!--    <li><a href="/signup/" class="nav-link" >Регистрация</a></li>-->
+  </ul>
+</nav>
+
+<header>
+  <h1>{% block heading %}Поехали с нами!{% endblock %}</h1>
+  {% block message%}<p>«Посмотри на мир. Он куда удивительнее cнов» – Рэй Брэдберри</p>{% endblock message %}
+</header>
+
+<div id="container">
+<main><img src='{{media_url}}/media/tourist_app/media/image/main.jpg/' alt="Картинка" width="100%" height="250"></main>
+</div>
+
+{% block content %} {% endblock %}
+
+<footer>
+  <p><center>&copy; 2023 Поехали!</center>
+</footer>
+</body>

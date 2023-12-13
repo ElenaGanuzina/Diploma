@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Что посмотреть{% endblock %}
+
+<h1>{% block heading %}Что посмотреть{% endblock %}</h1>
+
+{% block content %}
+
+{% for place in places %}
+<div class="div-place"><main>
+  <p><img src="{{ place.image.url }}/" class="card-img-top" alt="" width='255' height="250"></p>
+  <form action="place/{{ place.place_name }}">
+    <p><a class="btn btn-primary" href="{{ place.get_absolute_url }}">{{ place.place_name }}</a></p>
+  </form>
+</main></div>
+{% endfor %}
+
+{% endblock %}

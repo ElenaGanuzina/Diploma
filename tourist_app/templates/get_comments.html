@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block title %}Отзывы{% endblock %}
+
+<h1>{% block heading %}Отзывы{% endblock %}</h1>
+
+{% block content %}
+  {% for comment in comments %}
+    <div class="div-comment">
+      <p><strong>{{ comment.name }}   {{ comment.publish_date }}</strong></p>
+      <hr>
+      <p>{{ comment.content }}</p>
+  {% endfor %}
+{% endblock %}
+
+
+

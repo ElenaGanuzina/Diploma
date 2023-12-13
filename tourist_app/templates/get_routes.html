@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Маршруты{% endblock %}
+
+<h1>{% block heading %}Башкирские маршруты{% endblock %}</h1>
+
+{% block content %}
+
+{% for route in routes %}
+<div class="div-route"><main>
+    {% if route.image %}
+    <p><img src="{{ route.image.url }}/" class="card-img-top" alt="Здесь скоро будет красота" width='255' height="250">
+    </p>
+    {% endif %}
+    <form action="place/{{ route.name }}">
+      <p><a class="btn btn-primary" href="{{ route.get_absolute_url }}">{{ route.name }}</a></p>
+    </form>
+
+    <p> Продолжительность: {{ route.duration }} дн.</p>
+
+  </main></div>
+{% endfor %}
+
+{% endblock %}

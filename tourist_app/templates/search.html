@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <h1>Поиск места</h1>
+  <form method="get">
+    {{ form.as_p }}
+    <button type="submit">Найти</button>
+  </form>
+  
+  <ul>
+    {% for object in objects %}
+      <li>{{ {object}.name }}</li>
+    {% empty %}
+      <li>Ничего не найдено</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

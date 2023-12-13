@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>{{route.name}}</h2>
+        {% if route.image %}
+        <img src="{{route.image.url}}" width="120">
+        {% endif %}
+        <p>{{route.description}}</p>
+        <hr>
+        <p>Продолжительность (минимум): {{ route.duration }} дней</p>
+    </div>
+
+
+{% endblock %}
